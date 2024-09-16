@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LinkedIn from '../components/icons/LinkedIn.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import GitHub from '../components/icons/GitHub.astro';
+import Badge from '../components/Badge.astro';
+import SocialPill from '../components/SocialPill.astro'
+import Mail from '../components/icons/Mail.astro';
+import Experience from '../components/Experience.astro';
+import BriefCase from '../components/icons/BriefCase.astro';
+import Code from '../components/icons/Code.astro';
+import Projects from '../components/Projects.astro';
+---
+
+<Layout title="Portfolio Maxi Liria - Desarrollador y programador Full Stack."
+description="Contrata a Maxi Liria para crear tu aplicacion web. Desarrollador web. Especializado en crear aplicaciones unicas."
+>
+	<main class="px-4">
+		<SectionContainer class=" relative top-14 pt-20 py-40 pb-32">
+			<img class="rounded-full size-[100px] object-cover mb-5" 
+src="/projects/foto.JPG" alt="foto de perfil de maxi liria">
+		<h1 id="sobre-mi" class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
+			Hey, soy Maxi 
+
+			<a 
+			href="https://www.linkedin.com/in/maxiliria/"
+			target="_blank"
+			rel="noopener"
+			class="flex justify-center items-center">
+				<Badge>Disponible para trabajar</Badge></h1>
+			</a>
+			
+		<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+			<span>Soy <span class="text-yellow-200/90">Full Stack Developer</span> con especialización en lenguajes como <span class="text-red-200/90">JavaScript [React, Angular, Node], Java [SpringBoot] y PHP [Laravel]</span>. Mi pasión por la tecnología va de la mano con mi compromiso de ayudar a los demás. Me entusiasman los desafíos y estoy constantemente buscando maneras de mejorar mis habilidades y conocimientos. Fuera del mundo de la programación, mi pasión por el deporte, me motiva a mantenerme activo y enfocado en mis objetivos,</span> 
+		</h2>
+		
+			<nav class="flex gap-4 mt-8 flex-wrap">
+				<SocialPill href="https://www.linkedin.com/in/maxiliria/">
+					<LinkedIn class="size-4 md:size-6" />
+					LinkedIn
+				</SocialPill>
+			
+				<SocialPill href="https://github.com/MaxiLiria">
+					<GitHub class="size-4 md:size-6" />
+						GitHub
+				</SocialPill>
+				<SocialPill href="mailto:maxiliria@gmail.com">
+					<Mail class="size-4 md:size-6" />
+						maxiliria@gmail.com
+				</SocialPill>
+
+			</nav>
+		</SectionContainer>
+
+		<SectionContainer id="experiencia">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<BriefCase class="size-8"/>
+				Expriencia laboral
+			</h2>
+			<Experience />
+		</SectionContainer>
+
+		<SectionContainer id="proyectos">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<Code class="size-8"/>
+				Proyectos
+			</h2>
+			<Projects />
+		</SectionContainer>
+	</main>
+</Layout>

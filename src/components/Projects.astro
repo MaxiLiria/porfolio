@@ -1,0 +1,117 @@
+---
+import Html from '../components/icons/Html.astro';
+import Css from '../components/icons/Css.astro';
+import JavaScript from '../components/icons/Js.astro';
+import React from './icons/React.astro';
+import Laravel from '../components/icons/Laravel.astro';
+import Node from '../components/icons/Node.astro';
+import Express from '../components/icons/Express.astro';
+import Tailwind from '../components/icons/Tailwind.astro';
+import MySql from '../components/icons/MySql.astro';
+import Mongo from '../components/icons/Mongo.astro';
+import Java from '../components/icons/Java.astro';
+
+
+const TAGS = {
+  HTML: {
+    name: "HTML",
+    color: "bg-[#ef6b4a] text-black",
+    icon: Html,
+  },
+  CSS: {
+    name: "CSS",
+    color: "bg-[#1999dc] text-black",
+    icon: Css,
+  },
+  JavaScript: {
+    name: "JavaScript",
+    color: "bg-[#EFDB4F] text-black",
+    icon: JavaScript,
+  },
+  React: {
+    name: "React",
+    color: "bg-white text-black",
+    icon: React,
+  },
+  Laravel: {
+    name: "Laravel",
+    color: "bg-white text-black",
+    icon: Laravel,
+  },
+  Node: {
+    name: "Node",
+    color: "bg-[#85BD00] text-black",
+    icon: Node,
+  },
+  Express: {
+    name: "Express",
+    color: "bg-[#292929] text-white",
+    icon: Express,
+  },
+  Tailwind: {
+    name: "Tailwind",
+    color: "bg-[#292929] text-white",
+    icon: Tailwind,
+  },
+  MySql: {
+    name: "MySql",
+    color: "bg-white text-black",
+    icon: MySql,
+  },
+  Mongo: {
+    name: "MongoDB",
+    color: "bg-[#126C50] text-white",
+    icon: Mongo,
+  },
+  SpringBoot: {
+    name: "SpringBoot",
+    color: "bg-[#126C50] text-white",
+    icon: Java,
+  },
+
+};
+
+const PROJECTS = [
+{
+    title: "AIM",
+    description:
+      "AIM es una una app desarrollada para reducir las desigualdades y fomentar alianzas para lograr los Objetivos de Desarrollo Sostenible, en la cual vas a poder crear desafios o cumplirlos. Para esta app aproveché tecnologías como...",
+    link: "https://www.aimapp.es",
+    image: "/projects/aimProject.png",
+    tags: [TAGS.JavaScript, TAGS.React, TAGS.SpringBoot,TAGS.HTML,TAGS.CSS, TAGS.MySql],
+  },
+  {
+    title: "E-Commerce",
+    description:
+      "Proyecto de e-commerce, una creación que surgió después de completar un intenso Boot Camp para poner a prueba las tecnologías aprendidas. Para llevar a cabo este proyecto creando tanto el back como el front, aproveché tecnologías como...",
+    link: "https://ecommerce-khaki-mu.vercel.app",
+    image: "/projects/eccomerce-2.jpg",
+    tags: [TAGS.HTML, TAGS.JavaScript, TAGS.React, TAGS.Node, TAGS.Express, TAGS.Tailwind, TAGS.Mongo],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, tags, image, link }) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex flex-wrap items-center gap-x-4 flex-row mb-4">
+        {tags.map((tag) => (
+            <li>
+                <span class={`${tag.color} flex items-center gap-x-2 rounded-full text-xs py-1 px-2 mt-2`}>
+                    <tag.icon class="size-6" />
+                    {tag.name}
+                </span>
+            </li>
+        ))}
+      </ul>
+      <div class="flex justify-center items-center">
+        <a href={link} target="_blank">
+        <img class="rounded shadow-2xl shadow-white/10 mb-20" src={image} alt={title} />
+      </a>
+      </div>
+     
+    </article>
+  ))
+}

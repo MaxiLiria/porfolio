@@ -1,0 +1,24 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+    {
+        date:"2023",
+        title:"Full Stack Developer - Sitelicon",
+        description:" Realicé ajustes en el código y la interfaz de usuario para mejorar la experiencia del cliente y la eficiencia operativa. Desarrolle desde cero un proyecto integral, creando el backend con Laravel para garantizar un rendimiento robusto y seguro. Diseñé y desarrollé una interfaz de administración eficiente utilizando React, además de construir la interfaz principal de la página utilizando la misma tecnología para una experiencia de usuario moderna y receptiva. Demostré una fuerte predisposición para colaborar, brindando apoyo y orientación a mis compañeros en el uso de tecnologías específicas." ,
+        link:"/projects/cv-carta-recomendacion.pdf",
+
+    }
+]
+---
+<ol class="relative border-s border-gray-200 ml-4">     
+    {
+        EXPERIENCE.map(experience => (
+        <li class="mb-10 ms-4">
+            <ExperienceItem {...experience}/>
+        </li>
+        ))
+    }             
+    
+</ol>
+
